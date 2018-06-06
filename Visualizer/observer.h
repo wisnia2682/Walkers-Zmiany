@@ -1,0 +1,1 @@
+Dodać odpowiednie metody

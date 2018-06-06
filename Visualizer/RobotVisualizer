@@ -1,0 +1,47 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   RYSOWANIE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Object3DS -> RobotVisualizer
+
+            RobotVisualizer(WRS) ma podobne metody jak Object3DS(W), tylko ze RV uzywa klasy facesh i cMesh...
+            
+            
+******************** cMesh ******************
+    
+    drawStaticMeshList -> uzyte w Scene.cpp w metodzie draw 
+    drawMowingMeshList(Vector3& scale, Mat34& object) uzyte w RobotVisualizer do wyrysowania mesha?
+    constructListFigures(string sceneType) - uzyte w Scene.cpp i w RobotVisualizer.cpp
+
+****************************************
+
+/* Loads objects and initializes display list */
+	void initializeList(char* filename, int id, Vector3& scale, Color col);
+            
+            uzywane w Qvisualizer.cpp
+            
+/* Renders objects on scene at given location */
+	void draw(Vector3& scale, Mat34& object);
+	
+	uzywane w Qvisualizer.cpp do wyrysowania meshy
+	
+	
+Metody ObjLoad podobne. 
+
+    W WRS jest zmienna int obj_qty, która przechowuje wartość meshy
+    W W jest wektor objects
+    
+    
+Metoda calcNormal moze zastapic metode "normal" z WRS
+
+
+#################
+    
+    W RobotVisualizer tworzone są listy zaczytanych meshow
+    
+    
+    
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+OD BIEDY MOZNA BY ZASTAPIC Przez OBJECT3DS po dodaniu metod i znmiennych %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

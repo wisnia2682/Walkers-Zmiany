@@ -1,0 +1,5 @@
+W WRS jest zaimplementowany regulator PID.
+
+Mozna go zostawic i nic nie przenosić. Ostatecznie i tak, żadne nie jest używany...
+
+Przenieść klase RegulatorInterface - uzywana w Robot.h

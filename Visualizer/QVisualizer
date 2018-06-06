@@ -1,0 +1,85 @@
+Konstruktory
+
+
+####################### w physx
+Do importu modeli 3D wykorzystano zewnętrzny kod autorstwa Damiano Vitulli'ego,
+który udostępnił klasę transformującą modele formatu 3DS na listę wielokątów, w ramach
+zestawu samouczków dotyczących implementacji grafiki trójwymiarowej w środowisku
+OpenGL. Dostępne kody źródłowe są udostępnione za darmo do celów dydaktycznych [20].
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ KOLIZIE W WALKERS TO COLDET, a w ODE z biblioteki ODE ?
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!3Dsloader przeniesc
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RYSOWANIE %%%%%%%%%%%%%%%%%%%%%%%%%%
+'
+
+W ODE wykorzystywana jest metoda makeMesh z pliku Scene.cpp
+
+Plik Scene.cpp używa obiektu cMesh, któ©y pochodzi z pliku drawer.h         
+    Trzeba znalezc w WALKERS -> QVisualizer metody, które mogą zastąpic (wyrzucic) klasę drawer do rysowania
+    EWENTUALNIE DODAĆ takie metody? bo to wszystko OPENGL ostatecznie
+    
+    W pliku defs.h w ODE stwrozona jest klasa Face, która jest używana przy tworzeniu meshów... W Walkers jej nie ma
+    
+    
+    ### W PHYSX jest plik object3S jest tam metoda Object3DSinit ktora przechowuje informacje o wierzcholkach mesha?
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+metody update, które znajdują się w WRS, używane w pliku observer.cpp
+
+Są zaimplementowane w klasie Observer (observer.h) oraz w QVisualizer (dlaczego w QV tez? nie wiem)
+W WRS, są tylko w klasie Observer
+
+
+
+
+
+    #$ %()$@!#($)(!@#)_$(!@)_#$!@ 
+            
+            Do przeniesienia:
+            
+                - Konstruktory
+                - przeciążone metody update
+                
+                ## zmienne private:
+                
+                - Skybox - do wyrzucenia?
+                - RobotVisualizer* robotFromFile
+                - vector<RobotVisualizer> meshes;
+                - int meshShape; //specifies shape of rendered objects
+                Scene simulator_scene; //scene visualization
+                string sceneXML, robotXML, visuXML; //filenames loaded from xml database
+                //visualizerConfig
+                int r, g, b; //background color
+                bool meshEnabled, flyingCameraEnabled;
+                float flyingCameraSpeed, a;
+                qglviewer::Vec pivot; //the pivot point of the camera
+                ///objects 2 draw
+                std::vector<Mat34> objects;
+                std::vector<ObjectInfo> bodies; //stores info about robot elements
+                std::vector<JointInfo> joints; //stores info about robot joints
+                
+                ## metody private
+                
+                przeciążone metody draw(), animate(), init()
+                
+                metody:
+                
+                int loadModels(vector<RobotVisualizer> &meshVec, string filename, bool meshEnabled);
+                
+                    /* QGLViewer configuration */
+                int configureVisualizer();
+
+                inline int getMeshShape(){
+                    return meshShape;
+                
+                

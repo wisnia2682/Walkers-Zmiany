@@ -1,0 +1,11 @@
+3DSloader istnieje w W
+
+Różni się typami zmiennych
+
+np. typedef struct - > Struct. To tylko różnica w deklaracji potem.
+
+W W są wektory, a w WRS zmienne przechowujace informacje o wierzcholkach i wielokatach
+
+
+
+#### Mozna użyć tego istniejącego.
