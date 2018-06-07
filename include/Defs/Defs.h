@@ -55,3 +55,6 @@ klasa Face w WRS. przechwouje dane Face, (trójkątów?) - z tego co widze nie m
 	 
 	 Nie uzywac zaleznosci z ODE we wspoldzielonych strukturach (messengerach). Wszystko co wykorzystuje ODE ma byc uzywane pliku ODE, 
 ewentualne konwertrry
+
+Point3d(std::string svector) ---> Point3d(const std::string& svector) --- wykorzystwyac referencje
+
