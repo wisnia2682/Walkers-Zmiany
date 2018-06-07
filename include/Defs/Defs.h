@@ -49,3 +49,9 @@ klasa Face w WRS. przechwouje dane Face, (trójkątów?) - z tego co widze nie m
 	struct JoinInfo, ObjectInfo, TorqueForce
     
    	 - Klasa commonFunc - przeniesc
+	 
+	 
+	 
+	 
+	 Nie uzywac zaleznosci z ODE we wspoldzielonych strukturach (messengerach). Wszystko co wykorzystuje ODE ma byc uzywane pliku ODE, 
+ewentualne konwertrry
